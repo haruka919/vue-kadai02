@@ -1,0 +1,13 @@
+$message-body-border-color: hsl(171, 100%, 41%);
+$message-header-body-border-width: 1px !default;
+.message{
+  &-header{
+    border: $message-header-body-border-width solid $message-body-border-color;
+    border-bottom: 0;
+    display: block;
+    text-align: center;
+    & + .message-body {
+      border: $message-header-body-border-width solid $message-body-border-color;
+    }
+  }
+}
