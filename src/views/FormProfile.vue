@@ -13,10 +13,10 @@
               <label class="has-text-link">-性別-</label>
               <div class="control mt-2 has-text-black">
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="gender" value="male" v-model="picked">男性
+                  <input type="radio" class="mr-1" name="gender" value="male" v-model="gender">男性
                 </label>
                   <label class="radio">
-                  <input type="radio" class="mr-1" name="gender" value="female" v-model="picked">女性
+                  <input type="radio" class="mr-1" name="gender" value="female" v-model="gender">女性
                 </label>
               </div>
             </div>
@@ -49,7 +49,7 @@
     </div>
     <div class="columns">
         <div class="column has-text-centered">
-          <router-link to="/form-question" class="button is-primary mx-6">次に進む<i class="ml-2 fas fa-angle-right"></i></router-link>
+          <button class="button is-primary mx-6" @click="save">次に進む<i class="ml-2 fas fa-angle-right"></i></button>
         </div>
       </div>
   </div>
@@ -60,6 +60,7 @@ export default {
   name: 'FormProfile',
   data () {
     return {
+      gender: '',
       selectedYear: 1990,
       selectedMonth: 1,
       selectedDay: 1,
@@ -90,6 +91,13 @@ export default {
       if (year < 1989 && year >= 1926) {
         return year + '（昭和' + (year - 1925) + '年）'
       }
+    },
+    save () {
+      this.$store.commit('save', {
+        gender: this.gender,
+        birth: this.showYear(this.selectedYear) + '年' + this.selectedMonth + '月' + this.selectedDay + '日'
+      })
+      this.$router.push('/form-question/')
     }
   },
   created () {
