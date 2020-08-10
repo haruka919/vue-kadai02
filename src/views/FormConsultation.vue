@@ -11,7 +11,7 @@
           <div class="message-body has-background-white">
             <div class="field mb-5">
               <label class="has-text-link">-ご相談内容-</label>
-              <textarea class="mt-3 textarea" rows="10"></textarea>
+              <textarea class="mt-3 textarea" rows="10" v-model="consultation"></textarea>
             </div>
           </div>
         </article>
@@ -25,3 +25,18 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'FormConsultation',
+  computed: {
+    consultation: {
+      get () {
+        return this.$store.state.consultation
+      },
+      set (value) {
+        this.$store.commit('saveConsultation', value)
+      }
+    }
+  }
+}
+</script>

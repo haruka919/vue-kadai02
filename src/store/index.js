@@ -11,7 +11,8 @@ export default new Vuex.Store({
     day: 1,
     question01: '',
     question02: '',
-    question03: ''
+    question03: '',
+    consultation: ''
   },
   mutations: {
     saveGender (state, data) {
@@ -34,6 +35,9 @@ export default new Vuex.Store({
     },
     saveQuestion03 (state, data) {
       state.question03 = data
+    },
+    saveConsultation (state, data) {
+      state.consultation = data
     }
   }
 })
