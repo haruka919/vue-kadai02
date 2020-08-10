@@ -49,7 +49,7 @@
     </div>
     <div class="columns">
         <div class="column has-text-centered">
-          <router-link to="/form-question" tag="button" class="button is-primary mx-6">次に進む<i class="ml-2 fas fa-angle-right"></i></router-link>
+          <router-link to="/form-question" tag="button" class="button is-primary mx-6" :disabled="isPush">次に進む<i class="ml-2 fas fa-angle-right"></i></router-link>
         </div>
       </div>
   </div>
@@ -95,6 +95,13 @@ export default {
       },
       set (day) {
         this.$store.commit('saveDay', day)
+      }
+    },
+    isPush () {
+      if (this.gender && this.selectedYear && this.selectedMonth && this.selectedDay) {
+        return false
+      } else {
+        return true
       }
     }
   },

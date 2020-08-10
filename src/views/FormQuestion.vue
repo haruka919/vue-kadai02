@@ -47,7 +47,7 @@
         <div class="columns">
           <div class="column has-text-centered">
             <router-link to="/" tag="button" class="button is-primary mx-6"><i class="mr-2 fas fa-angle-left"></i>前に戻る</router-link>
-            <router-link to="/form-consultation" tag="button" class="button is-primary mx-6">次に進む<i class="ml-2 fas fa-angle-right"></i></router-link>
+            <router-link to="/form-consultation" tag="button" class="button is-primary mx-6" :disabled="isPush">次に進む<i class="ml-2 fas fa-angle-right"></i></router-link>
           </div>
         </div>
       </div>
@@ -80,6 +80,13 @@ export default {
       },
       set (value) {
         this.$store.commit('saveQuestion03', value)
+      }
+    },
+    isPush () {
+      if (this.question01 && this.question02 && this.question03) {
+        return false
+      } else {
+        return true
       }
     }
   }
