@@ -49,7 +49,7 @@
     </div>
     <div class="columns">
         <div class="column has-text-centered">
-          <button class="button is-primary mx-6" @click="save">次に進む<i class="ml-2 fas fa-angle-right"></i></button>
+          <router-link to="/form-question" tag="button" class="button is-primary mx-6">次に進む<i class="ml-2 fas fa-angle-right"></i></router-link>
         </div>
       </div>
   </div>
@@ -60,12 +60,42 @@ export default {
   name: 'FormProfile',
   data () {
     return {
-      gender: '',
-      selectedYear: 1990,
-      selectedMonth: 1,
-      selectedDay: 1,
       years: [...Array(50)].map((_, i) => i + 1955),
       maxDays: ''
+    }
+  },
+  computed: {
+    gender: {
+      get () {
+        return this.$store.state.gender
+      },
+      set (gender) {
+        this.$store.commit('saveGender', gender)
+      }
+    },
+    selectedYear: {
+      get () {
+        return this.$store.state.year
+      },
+      set (year) {
+        this.$store.commit('saveYear', year)
+      }
+    },
+    selectedMonth: {
+      get () {
+        return this.$store.state.month
+      },
+      set (month) {
+        this.$store.commit('saveMonth', month)
+      }
+    },
+    selectedDay: {
+      get () {
+        return this.$store.state.day
+      },
+      set (day) {
+        this.$store.commit('saveDay', day)
+      }
     }
   },
   watch: {
@@ -91,13 +121,6 @@ export default {
       if (year < 1989 && year >= 1926) {
         return year + '（昭和' + (year - 1925) + '年）'
       }
-    },
-    save () {
-      this.$store.commit('save', {
-        gender: this.gender,
-        birth: this.showYear(this.selectedYear) + '年' + this.selectedMonth + '月' + this.selectedDay + '日'
-      })
-      this.$router.push('/form-question/')
     }
   },
   created () {
