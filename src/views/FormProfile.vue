@@ -67,7 +67,7 @@ export default {
   computed: {
     gender: {
       get () {
-        return this.$store.state.gender
+        return this.$store.getters.gender
       },
       set (gender) {
         this.$store.commit('saveGender', gender)
@@ -75,7 +75,7 @@ export default {
     },
     selectedYear: {
       get () {
-        return this.$store.state.year
+        return this.$store.getters.year
       },
       set (year) {
         this.$store.commit('saveYear', year)
@@ -83,7 +83,7 @@ export default {
     },
     selectedMonth: {
       get () {
-        return this.$store.state.month
+        return this.$store.getters.month
       },
       set (month) {
         this.$store.commit('saveMonth', month)
@@ -91,7 +91,7 @@ export default {
     },
     selectedDay: {
       get () {
-        return this.$store.state.day
+        return this.$store.getters.day
       },
       set (day) {
         this.$store.commit('saveDay', day)

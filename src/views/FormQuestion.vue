@@ -60,7 +60,7 @@ export default {
   computed: {
     question01: {
       get () {
-        return this.$store.state.question01
+        return this.$store.getters.question01
       },
       set (value) {
         this.$store.commit('saveQuestion01', value)
@@ -68,7 +68,7 @@ export default {
     },
     question02: {
       get () {
-        return this.$store.state.question02
+        return this.$store.getters.question02
       },
       set (value) {
         this.$store.commit('saveQuestion02', value)
@@ -76,7 +76,7 @@ export default {
     },
     question03: {
       get () {
-        return this.$store.state.question03
+        return this.$store.getters.question03
       },
       set (value) {
         this.$store.commit('saveQuestion03', value)
