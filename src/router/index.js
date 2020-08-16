@@ -19,6 +19,11 @@ const routes = [
     path: '/form-consultation',
     name: 'FormConsultation',
     component: () => import('../views/FormConsultation.vue')
+  },
+  {
+    path: '/form-comfirm',
+    name: 'FormComfirm',
+    component: () => import('../views/FormComfirm.vue')
   }
 ]
 
