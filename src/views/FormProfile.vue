@@ -13,10 +13,10 @@
               <label class="has-text-link">-性別-</label>
               <div class="control mt-2 has-text-black">
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="gender" value="male" v-model="gender">男性
+                  <input type="radio" class="mr-1" name="gender" value="男性" v-model="gender">男性
                 </label>
                   <label class="radio">
-                  <input type="radio" class="mr-1" name="gender" value="female" v-model="gender">女性
+                  <input type="radio" class="mr-1" name="gender" value="女性" v-model="gender">女性
                 </label>
               </div>
             </div>

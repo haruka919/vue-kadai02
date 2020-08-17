@@ -11,8 +11,7 @@
           <div class="message-body has-background-white">
             <div class="field mb-5">
               <label class="has-text-link">-性別-</label>
-              <p v-if="gender === 'male'">男性</p>
-              <p v-else-if="gender === 'female'">女性</p>
+              <p>{{ gender }}</p>
             </div>
             <div class="field mb-5">
               <label class="has-text-link">-生年月日-</label>
@@ -20,18 +19,15 @@
             </div>
             <div class="field mb-5">
               <label class="has-text-link">-現在、生命保険に加入されていますか？-</label>
-              <p v-if="question01 == 'true'">はい</p>
-              <p v-else>いいえ</p>
+              <p>{{ question01 }}</p>
             </div>
             <div class="field mb-5">
               <label class="has-text-link">-現在入院中ですか？また、最近3カ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？-</label>
-              <p v-if="question02 == 'true'">はい</p>
-              <p v-else>いいえ</p>
+              <p>{{ question02 }}</p>
             </div>
             <div class="field mb-5">
               <label class="has-text-link">-過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？-</label>
-              <p v-if="question03 == 'true'">はい</p>
-              <p v-else>いいえ</p>
+              <p>{{ question03 }}</p>
             </div>
             <div class="field mb-5">
               <label class="has-text-link">-ご相談内容-</label>
@@ -50,11 +46,11 @@
   </div>
 </template>
 <script>
-import { mapGetters } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'FormComfirm',
   computed: {
-    ...mapGetters([
+    ...mapState([
       'gender',
       'year',
       'month',
