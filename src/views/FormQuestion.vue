@@ -13,10 +13,10 @@
               <label class="has-text-link">-現在、生命保険に加入されていますか？-</label>
               <div class="control mt-2 has-text-black">
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="question01" value="true" v-model="question01">はい
+                  <input type="radio" class="mr-1" name="question01" value="はい" v-model="question01">はい
                 </label>
                   <label class="radio">
-                  <input type="radio" class="mr-1" name="question01" value="false" v-model="question01">いいえ
+                  <input type="radio" class="mr-1" name="question01" value="いいえ" v-model="question01">いいえ
                 </label>
               </div>
             </div>
@@ -24,10 +24,10 @@
               <label class="has-text-link">-現在入院中ですか？また、最近3カ月以内に医師の診察・検査の結果、入院・手術をすすめられたことはありますか？-</label>
               <div class="control mt-2 has-text-black">
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="question02" value="true" v-model="question02">はい
+                  <input type="radio" class="mr-1" name="question02" value="はい" v-model="question02">はい
                 </label>
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="question02" value="false" v-model="question02">いいえ
+                  <input type="radio" class="mr-1" name="question02" value="いいえ" v-model="question02">いいえ
                 </label>
               </div>
             </div>
@@ -35,10 +35,10 @@
               <label class="has-text-link">-過去5年以内に、病気やけがで、手術をうけたことまたは継続して7日以上の入院をしたことがありますか？-</label>
               <div class="control mt-2 has-text-black">
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="question03" value="true" v-model="question03">はい
+                  <input type="radio" class="mr-1" name="question03" value="はい" v-model="question03">はい
                 </label>
                 <label class="radio">
-                  <input type="radio" class="mr-1" name="question03" value="false" v-model="question03">いいえ
+                  <input type="radio" class="mr-1" name="question03" value="いいえ" v-model="question03">いいえ
                 </label>
               </div>
             </div>
